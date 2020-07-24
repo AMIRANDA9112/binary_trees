@@ -5,7 +5,7 @@
  * @value: id of node
  * Return: new node
  */
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
+binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 
 {
 	binary_tree_t *p = NULL;
@@ -24,19 +24,19 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 	p->parent = parent;
 	p->n = value;
-	p->right = NULL;
+	p->left = NULL;
 
-	if (parent->left != NULL)
+	if (parent->right != NULL)
 	{
-		parent->left->parent = p;
-		p->left = parent->left;
-		parent->left = p;
+		parent->right->parent = p;
+		p->right = parent->right;
+		parent->right = p;
 	}
 
 	else
 	{
-		parent->left = p;
-		p->left = NULL;
+		parent->right = p;
+		p->right = NULL;
 	}
 
 	return (p);
