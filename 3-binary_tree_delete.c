@@ -1,9 +1,8 @@
 #include "binary_trees.h"
 /**
  * binary_tree_delete - delete a tree
- *
  * @tree: to delete
- * Return: new node
+ * Return: void function
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
