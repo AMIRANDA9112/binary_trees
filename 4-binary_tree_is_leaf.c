@@ -1,0 +1,15 @@
+#include "binary_trees.h"
+/**
+ * binary_tree_is_leaf - verify if a node is a leaf of a tree
+ * @node: node to analize
+ * Return: 1 if leaf & zero if not y can noy fajarding
+ */
+int binary_tree_is_leaf(const binary_tree_t *node)
+{
+    if (node->left == NULL && node->right == NULL)
+        return (1);
+    else if (node == NULL)
+        return (0);
+    else
+        return (0);
+}
