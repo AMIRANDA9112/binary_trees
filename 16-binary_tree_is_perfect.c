@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * tree_height - search the height of a tree
  * @tree: tree to analyze
@@ -38,4 +37,37 @@ int binary_tree_balance(const binary_tree_t *tree)
 		return (0);
 	}
 	return (tree_height(tree->left) - tree_height(tree->right));
+}
+/**
+ * binary_tree_size - search the size of a tree
+ * @tree: tree to analysze
+ * Return: size of tree
+ */
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	return (1 + (binary_tree_size(tree->left) + (binary_tree_size(tree->right))));
+}
+/**
+ * binary_tree_is_perfect - checks if a tree is perfect
+ * @tree: tree to analyze
+ * Return: 0 if false and 1 if true
+ */
+int binary_tree_is_perfect(const binary_tree_t *tree)
+{
+if (tree == NULL)
+	return (0);
+
+
+	if (binary_tree_balance(tree->left) == 0)
+		if (binary_tree_balance(tree->right) == 0)
+		{
+			if (binary_tree_size(tree->left) == binary_tree_size(tree->right))
+				return (1);
+
+		}
+		return (0);
+	return (0);
 }
